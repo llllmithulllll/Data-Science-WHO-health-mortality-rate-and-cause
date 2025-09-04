@@ -166,7 +166,7 @@ plt.ylabel("Number of Deaths")
 plt.xticks(rotation=45)
 plt.legend(title="Cause of Death")
 plt.tight_layout()
-plt.savefig(r'.\data\output\death_rate_by_Year_in_accordance_to_Gender.png')
+plt.savefig(r'.\data\output\death rate_by_Year_in_accordance_to_Gender.png')
 plt.show()
 
 

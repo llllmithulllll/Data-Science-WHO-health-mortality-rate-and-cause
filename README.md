@@ -87,7 +87,7 @@ The following visualizations are generated:
    - Graph Type: Bar chart
    - Saved as: `death rate by Year in accordance to Gender.png`
 
-   ![Death Rate by Year by Gender](./data/output/death_rate_by_Year_in_accordance_to_Gender.png)  
+   ![Death Rate by Year by Gender](./data/output/death rate_by_Year_in_accordance_to_Gender.png)  
    
 
 ---
