@@ -43,18 +43,29 @@ df_concat = df_concat.sort_values(by=["Region Code", "Year"])
 # ------------------------------
 # Clean the data
 # ------------------------------
+
+# removing rows which have more than 1 columns empty and if one empty, fill it with 0
+
 df_concat = df_concat.dropna(thresh=df_concat.shape[1]-1).fillna(0)
 df_concat.columns = df_concat.columns.str.strip().str.replace('"', '')
+
+# removing data for all sex, only taking male and female
 
 df_concat = df_concat[df_concat['Sex'] != 'All']
 df_concat = df_concat[df_concat['Age Group'] != '[All]']
 
+#adding id as index
+
 df_concat["ID"] = range(1, len(df_concat) + 1)
 df_concat.set_index("ID", inplace=True)
+
+# Convert to numeric (invalid values → NaN → replace with 0)
 
 df_concat["Death rate per 100 000 population"] = pd.to_numeric(
     df_concat["Death rate per 100 000 population"], errors="coerce"
 ).fillna(0)
+
+#dropping duplicates 
 
 df_concat = df_concat.drop_duplicates()
 
