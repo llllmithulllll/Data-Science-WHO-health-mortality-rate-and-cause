@@ -131,7 +131,7 @@ plt.ylabel("Number of Deaths")
 plt.xticks(rotation=45)
 plt.legend(title="Cause of Death")
 plt.tight_layout()
-plt.savefig(r'.\data\output\Cause of Death by region.png')
+plt.savefig(r'.\data\output\Cause_of_Death_by_region.png')
 plt.show()
 
 region_df=df_concat.pivot_table(index="Region Name", columns="Sex",values="Number",aggfunc="sum")
@@ -142,7 +142,7 @@ plt.ylabel("Number of Deaths")
 plt.xticks(rotation=45)
 plt.legend(title="Cause of Death")
 plt.tight_layout()
-plt.savefig(r'.\data\output\Death rate by Gender.png')
+plt.savefig(r'.\data\output\Death_rate_by_Gender.png')
 plt.show()
 
 
@@ -154,7 +154,7 @@ plt.ylabel("Number of Deaths")
 plt.xticks(rotation=45)
 plt.legend(title="Cause of Death")
 plt.tight_layout()
-plt.savefig(r'.\data\output\death rate by Year.png')
+plt.savefig(r'.\data\output\death_rate_by_Year.png')
 plt.show()
 
 
@@ -166,7 +166,7 @@ plt.ylabel("Number of Deaths")
 plt.xticks(rotation=45)
 plt.legend(title="Cause of Death")
 plt.tight_layout()
-plt.savefig(r'.\data\output\death rate by Year in accordance to Gender.png')
+plt.savefig(r'.\data\output\death_rate_by_Year_in_accordance_to_Gender.png')
 plt.show()
 
 

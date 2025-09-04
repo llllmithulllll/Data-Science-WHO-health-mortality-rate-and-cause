@@ -56,14 +56,14 @@ The following visualizations are generated:
    - Saved as: `Cause_of_death_by_Broad_Age_group.png`
 
    ![Cause of Death by Broad Age Group](./data/output/Cause_of_death_by_Broad_Age_group.png)  
-   *Paste your exported graph here if needed.*
+   
 
 2. **Cause of Death by Region**
    - Pivoted data by region and cause of death.
    - Graph Type: Bar chart
    - Saved as: `Cause of Death by region.png`
 
-   ![Cause of Death by Region](./data/output/Cause of Death by region.png)  
+   ![Cause of Death by Region](./data/output/Cause_of_Death_by_region.png)  
    *Paste your exported graph here.*
 
 3. **Death Rate by Gender**
@@ -71,24 +71,24 @@ The following visualizations are generated:
    - Graph Type: Bar chart
    - Saved as: `Death rate by Gender.png`
 
-   ![Death Rate by Gender](./data/output/Death rate by Gender.png)  
-   *Paste your exported graph here.*
+   ![Death Rate by Gender](./data/output/Death_rate_by_Gender.png)  
+   
 
 4. **Death Rate by Year**
    - Pivoted data by year and cause of death.
    - Graph Type: Bar chart
    - Saved as: `death rate by Year.png`
 
-   ![Death Rate by Year](./data/output/death rate by Year.png)  
-   *Paste your exported graph here.*
+   ![Death Rate by Year](./data/output/death_rate_by_Year.png)  
+  
 
 5. **Death Rate by Year in Accordance to Gender**
    - Pivoted data by year and gender.
    - Graph Type: Bar chart
    - Saved as: `death rate by Year in accordance to Gender.png`
 
-   ![Death Rate by Year by Gender](./data/output/death rate by Year in accordance to Gender.png)  
-   *Paste your exported graph here.*
+   ![Death Rate by Year by Gender](./data/output/death_rate_by_Year_in_accordance_to_Gender.png)  
+   
 
 ---
 
