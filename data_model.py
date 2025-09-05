@@ -12,8 +12,9 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 OUTPUT_DIR = os.path.join(DATA_DIR, 'output')
 MODELS_DIR=os.path.join(BASE_DIR,'models')
 
+
 df_data=pd.read_csv(os.path.join(OUTPUT_DIR,'data.csv'))
-x=df_data[['Age Group','Region Name','Year','Sex','cause','Number','Percentage of cause-specific deaths out of total deaths']]
+x=df_data[['Age Group','Region Name','Year','Sex','cause']]
 x=pd.get_dummies(x,drop_first=True)
 y=df_data['Death rate per 100 000 population']
 print(df_data.columns)
