@@ -1,0 +1,6 @@
+#ignore this folders
+/models/
+
+#ingnore these file extensions
+
+*.pkl
