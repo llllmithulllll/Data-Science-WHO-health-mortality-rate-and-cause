@@ -1,90 +1,128 @@
-# **WHO Mortality Data Analysis and Predictive Modeling**
+# WHO Mortality Data Analysis
 
-This project analyzes mortality data from the World Health Organization (WHO), focusing on deaths by cause, age group, region, and gender. The analysis uses Python with the pandas and matplotlib libraries for data manipulation and visualization. Additionally, the project includes a predictive modeling component using scikit-learn to forecast mortality numbers.
+This project analyzes mortality data from the World Health Organization (WHO), focusing on deaths by cause, age group, region, and gender. The analysis uses Python, pandas for data manipulation, and matplotlib for visualization.
 
-## **Table of Contents**
+---
 
-1. [Project Description](https://www.google.com/search?q=%23project-description)  
-2. [Data Sources](https://www.google.com/search?q=%23data-sources)  
-3. [Data Cleaning and Processing](https://www.google.com/search?q=%23data-cleaning-and-processing)  
-4. [Analysis and Visualization](https://www.google.com/search?q=%23analysis-and-visualization)  
-5. [Data Preparation for Modeling](https://www.google.com/search?q=%23data-preparation-for-modeling)  
-6. [Model Generation](https://www.google.com/search?q=%23model-generation)  
-7. [Requirements](https://www.google.com/search?q=%23requirements)  
-8. [Usage](https://www.google.com/search?q=%23usage)  
-9. [Output](https://www.google.com/search?q=%23output)
+## Table of Contents
+1. [Project Description](#project-description)
+2. [Data Sources](#data-sources)
+3. [Data Cleaning and Processing](#data-cleaning-and-processing)
+4. [Analysis and Visualization](#analysis-and-visualization)
+5. [Exported Graphs](#exported-graphs)
+6. [Requirements](#requirements)
+7. [Usage](#usage)
+8. [Output](#output)
+9. [Data Preparation for Modeling](#data-preparation-for-modeling)
+10. [Model Generation](#model-generation)
 
-## **Project Description**
+---
 
-The project's primary goal is to provide a comprehensive understanding of global mortality trends. It processes multiple WHO mortality datasets, cleans and prepares the data, and generates key visualizations to highlight patterns across different causes, age groups, regions, and genders. The final phase of the project involves preparing the cleaned data for a predictive model to forecast future mortality figures.
+## Project Description
+The code processes multiple WHO mortality datasets, cleans the data, and generates visualizations to understand trends in mortality across different causes, age groups, regions, and genders.
 
-## **Data Sources**
+---
 
-The analysis is designed to use the following datasets, which should be placed in the ./data/ directory:
+## Data Sources
+The analysis uses the following datasets:
 
-* Injury\_deaths.csv  
-* Communicable\_maternal\_perinatal\_nutritional\_conditions\_deaths.csv  
-* Noncommunicable\_diseases\_deaths.csv
+- `Injury` deaths CSV
+- `Communicable, maternal, perinatal and nutritional conditions` CSV
+- `Noncommunicable diseases` CSV
 
-For demonstration purposes, the provided script will generate placeholder data to ensure it is runnable.
+All CSVs are expected to be in the `./data/` folder.
 
-## **Data Cleaning and Processing**
+---
 
-The data\_analysis.py script performs the following steps to ensure data quality and consistency:
+## Data Cleaning and Processing
+Steps performed on the datasets:
 
-1. **Data Consolidation**: Combines the multiple CSV files into a single, unified pandas DataFrame.  
-2. **Missing Value Handling**: Imputes missing values by filling single occurrences with 0 and removing rows with more than one missing value.  
-3. **Column Standardization**: Cleans and standardizes column names by stripping whitespace and special characters.  
-4. **Data Filtering**: Excludes aggregate data, retaining only entries for 'Male' and 'Female'.  
-5. **Index Assignment**: Adds a unique ID column to serve as an index for each record.  
-6. **Type Conversion**: Converts the death rate column to a numeric data type for mathematical operations.  
-7. **Duplicate Removal**: Identifies and removes any duplicate rows to maintain data integrity.  
-8. **Categorical Binning**: Groups age ranges and years into broader, more manageable bins (0-20, 21-40, etc.) for simplified analysis.  
-9. **Data Export**: Saves the final cleaned and processed DataFrame as data.csv in the data/output directory for subsequent use.
+1. Combine multiple CSV files into a single dataframe.
+2. Remove rows with more than one missing value and fill single missing values with 0.
+3. Strip and clean column names.
+4. Keep only male and female data (exclude 'All').
+5. Add an `ID` column as the index.
+6. Convert the death rate column to numeric.
+7. Remove duplicates.
+8. Map age groups to broader bins (`0-20`, `21-40`, `41-60`, `61-80`, `81+`).
+9. Map years to broader decades (`1961-1970`, `1971-1980`, etc.).
 
-## **Analysis and Visualization**
+---
 
-The data\_analysis.py script generates five distinct visualizations, saved as .png files, to illustrate key mortality trends.
+## Analysis and Visualization
+The following visualizations are generated:
 
-1. **Cause of Death by Broad Age Group**: A line chart showing how different causes of death change across age groups.  
-2. **Cause of Death by Region**: A bar chart comparing the primary causes of death across various regions.  
-3. **Death Rate by Gender**: A bar chart highlighting the difference in overall death rates between males and females.  
-4. **Death Rate by Year**: A bar chart visualizing how death rates have trended over time across different causes.  
-5. **Death Rate by Year by Gender**: A stacked bar chart showing the breakdown of death rates by gender over time.
+1. **Cause of Death by Broad Age Group**
+   - Pivoted data by age group and cause of death.
+   - Graph Type: Line chart
+   - Saved as: `Cause_of_death_by_Broad_Age_group.png`
 
-## **Predictive Modeling**
+   ![Cause of Death by Broad Age Group](./data/output/Cause_of_death_by_Broad_Age_group.png)  
+   
 
-The model\_generation.py script focuses on building a machine learning model to predict mortality numbers.
+2. **Cause of Death by Region**
+   - Pivoted data by region and cause of death.
+   - Graph Type: Bar chart
+   - Saved as: `Cause of Death by region.png`
 
-## **Data Preparation for Modeling**
+   ![Cause of Death by Region](./data/output/Cause_of_Death_by_region.png)  
+   *Paste your exported graph here.*
 
-The model\_generation.py script performs the following steps to prepare data for a machine learning model:
+3. **Death Rate by Gender**
+   - Pivoted data by gender.
+   - Graph Type: Bar chart
+   - Saved as: `Death rate by Gender.png`
 
-1. **Data Loading**: The cleaned data.csv file is loaded as the primary dataset.  
-2. **Feature and Target Selection**: The script identifies the input features (Age Group, Region Name, Year, Sex, Cause) and the target variable (Numbers of deaths).  
-3. **One-Hot Encoding**: Categorical features are converted into a numerical format suitable for machine learning algorithms using one-hot encoding.  
-4. **Data Splitting**: The dataset is split into training and testing sets to evaluate the model's performance on unseen data.
+   ![Death Rate by Gender](./data/output/Death_rate_by_Gender.png)  
+   
 
-## **Model Generation**
+4. **Death Rate by Year**
+   - Pivoted data by year and cause of death.
+   - Graph Type: Bar chart
+   - Saved as: `death rate by Year.png`
 
-The model\_generation.py script continues with the following steps to generate the predictive model:
+   ![Death Rate by Year](./data/output/death_rate_by_Year.png)  
+  
 
-1. **Model Training**: A RandomForestRegressor model is trained on the training data. This model is chosen for its robustness and ability to handle complex feature interactions.  
-2. **Model Evaluation**: The model's predictions on the test set are evaluated using two key metrics:  
-   * **Mean Squared Error (MSE)**: Measures the average squared difference between the actual and predicted values.  
-   * **R-squared (**R2**)**: Represents the proportion of the variance in the dependent variable that is predictable from the independent variables.
+5. **Death Rate by Year in Accordance to Gender**
+   - Pivoted data by year and gender.
+   - Graph Type: Bar chart
+   - Saved as: `death rate by Year in accordance to Gender.png`
 
-## **Requirements**
+   ![Death Rate by Year by Gender](data/output/death_rate_by_Year_in_accordance_to_Gender.png)
 
-To run this project, you need Python and the following libraries. The re library is a built-in module.
+---
 
-pip install pandas matplotlib scikit-learn
+## Requirements
+- Python 3.x
+- pandas
+- matplotlib
+- re (built-in)
 
-## **Usage**
+Install dependencies using:
 
-1. Place your raw data CSV files in a data directory.  
-2. Run the data\_analysis.py script to perform data cleaning and generate the visualizations. This will also create the cleaned data.csv file and an output folder with the plots.  
-3. Run the model\_generation.py script to train and evaluate the predictive model.
+```bash
+pip install pandas matplotlib 
 
-python data\_analysis.py  
-python model\_generation.py  
+
+
+## Data Preparation for Modeling
+
+The `data_model.py` script demonstrates how to load the cleaned dataset (`data/output/data.csv`) and prepare it for predictive modeling.
+
+Steps performed in the script:
+
+1. **Set up directories**  
+   The script identifies the base directory, data folder, and output folder to ensure paths work regardless of the system.
+
+2. **Load the cleaned dataset**  
+   ```python
+   import pandas as pd
+   import os
+
+   BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+   DATA_DIR = os.path.join(BASE_DIR, 'data')
+   OUTPUT_DIR = os.path.join(DATA_DIR, 'output')
+
+   df_data = pd.read_csv(os.path.join(OUTPUT_DIR, 'data.csv'))
+
