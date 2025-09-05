@@ -39,7 +39,6 @@ df_noncomm['cause'] = "Incommunicable"
 # ------------------------------
 df_concat = pd.concat([df_injuries, df_comm, df_noncomm], ignore_index=True)
 df_concat = df_concat.sort_values(by=["Region Code", "Year"])
-df_concat.to_csv(os.path.join(OUTPUT_DIR,'data_for_report.csv'))
 
 # ------------------------------
 # Clean the data
