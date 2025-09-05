@@ -10,11 +10,9 @@ This project analyzes mortality data from the World Health Organization (WHO), f
 3. [Data Cleaning and Processing](#data-cleaning-and-processing)
 4. [Analysis and Visualization](#analysis-and-visualization)
 5. [Exported Graphs](#exported-graphs)
-6. [Requirements](#requirements)
-7. [Usage](#usage)
-8. [Output](#output)
-9. [Data Preparation for Modeling](#data-preparation-for-modeling)
-10. [Model Generation](#model-generation)
+6. [Data Preparation for Modeling](#data-preparation-for-modeling)
+7. [Model Generation](#model-generation)
+8. [Requirements](#requirements)
 
 ---
 
@@ -51,6 +49,8 @@ Steps performed on the datasets:
 
 ## Analysis and Visualization
 The following visualizations are generated:
+
+## Exported Graphs
 
 1. **Cause of Death by Broad Age Group**
    - Pivoted data by age group and cause of death.
@@ -91,7 +91,26 @@ The following visualizations are generated:
 
    ![Death Rate by Year by Gender](data/output/death_rate_by_Year_in_accordance_to_Gender.png)
 
----
+
+
+
+## Data Preparation for Modeling
+
+1. **Data Loading**: The cleaned data.csv file is loaded as the primary dataset.  
+2. **Feature and Target Selection**: The script identifies the input features (Age Group, Region Name, Year, Sex, Cause) and the target variable (Numbers of deaths).  
+3. **One-Hot Encoding**: Categorical features are converted into a numerical format suitable for machine learning algorithms using one-hot encoding.  
+4. **Data Splitting**: The dataset is split into training and testing sets to evaluate the model's performance on unseen data.
+
+
+## Model Generation
+
+The model\_generation.py script continues with the following steps to generate the predictive model:
+
+1. **Model Training**: A RandomForestRegressor model is trained on the training data. This model is chosen for its robustness and ability to handle complex feature interactions.  
+2. **Model Evaluation**: The model's predictions on the test set are evaluated using two key metrics:  
+   * **Mean Squared Error (MSE)**: Measures the average squared difference between the actual and predicted values.  
+   * **R-squared (**R2**)**: Represents the proportion of the variance in the dependent variable that is predictable from the independent variables.
+
 
 ## Requirements
 - Python 3.x
@@ -103,26 +122,7 @@ Install dependencies using:
 
 ```bash
 pip install pandas matplotlib 
+pip install pandas matplotlib scikit-learn
 
 
-
-## Data Preparation for Modeling
-
-The `data_model.py` script demonstrates how to load the cleaned dataset (`data/output/data.csv`) and prepare it for predictive modeling.
-
-Steps performed in the script:
-
-1. **Set up directories**  
-   The script identifies the base directory, data folder, and output folder to ensure paths work regardless of the system.
-
-2. **Load the cleaned dataset**  
-   ```python
-   import pandas as pd
-   import os
-
-   BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-   DATA_DIR = os.path.join(BASE_DIR, 'data')
-   OUTPUT_DIR = os.path.join(DATA_DIR, 'output')
-
-   df_data = pd.read_csv(os.path.join(OUTPUT_DIR, 'data.csv'))
 
