@@ -121,7 +121,7 @@ df_concat['Year_broad'] = df_concat['Year'].apply(year_map)
 # Plots
 # ------------------------------
 # Cause of Death by Broad Age Group
-pivot_df = df_concat.pivot_table(index="Age Group Broad", columns="cause", values="Death rate per 100 000 population", aggfunc="sum")
+pivot_df = df_concat.pivot_table(index="Age Group Broad", columns="cause", values="Death rate per 100 000 population", aggfunc="mean")
 pivot_df.plot(kind="line", figsize=(10,6))
 plt.title("Cause of Death by Broad Age Group")
 plt.xlabel("Age Group (years)")
@@ -133,7 +133,7 @@ plt.savefig(os.path.join(OUTPUT_DIR, "Cause_of_death_by_Broad_Age_group.png"))
 plt.show()
 
 # Cause of Death by Region
-region_df = df_concat.pivot_table(index="Region Name", columns="cause", values="Death rate per 100 000 population", aggfunc="sum")
+region_df = df_concat.pivot_table(index="Region Name", columns="cause", values="Death rate per 100 000 population", aggfunc="mean")
 region_df.plot(kind="bar", figsize=(10,6))
 plt.title("Cause of Death by Region")
 plt.xlabel("Region")
@@ -145,7 +145,7 @@ plt.savefig(os.path.join(OUTPUT_DIR, 'Cause_of_Death_by_region.png'))
 plt.show()
 
 # Death rate by Gender in accordance to the Region
-gender_region_df = df_concat.pivot_table(index="Region Name", columns="Sex", values="Death rate per 100 000 population", aggfunc="sum")
+gender_region_df = df_concat.pivot_table(index="Region Name", columns="Sex", values="Death rate per 100 000 population", aggfunc="mean")
 gender_region_df.plot(kind="bar", figsize=(10,6))
 plt.title("Death rate by Gender in accordance to the Region")
 plt.xlabel("Region")
@@ -157,7 +157,7 @@ plt.savefig(os.path.join(OUTPUT_DIR, 'Death_rate_by_Gender.png'))
 plt.show()
 
 # Death rate by Year
-timeline_df = df_concat.pivot_table(index="Year_broad", columns="cause", values="Death rate per 100 000 population", aggfunc="sum")
+timeline_df = df_concat.pivot_table(index="Year_broad", columns="cause", values="Death rate per 100 000 population", aggfunc="mean")
 timeline_df.plot(kind="bar", figsize=(10,6))
 plt.title("Death rate by Year")
 plt.xlabel("Year")
@@ -169,7 +169,7 @@ plt.savefig(os.path.join(OUTPUT_DIR, 'death_rate_by_Year.png'))
 plt.show()
 
 # Death rate by Year and Gender
-gender_year_df = df_concat.pivot_table(index="Year_broad", columns="Sex", values="Death rate per 100 000 population", aggfunc="sum")
+gender_year_df = df_concat.pivot_table(index="Year_broad", columns="Sex", values="Death rate per 100 000 population", aggfunc="mean")
 gender_year_df.plot(kind="bar", figsize=(10,6))
 plt.title("Death rate by Year in accordance to Gender")
 plt.xlabel("Year")
