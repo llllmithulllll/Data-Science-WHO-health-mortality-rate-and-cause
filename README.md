@@ -6,13 +6,14 @@ This project analyzes mortality data from the World Health Organization (WHO), f
 
 ## Table of Contents
 1. [Project Description](#project-description)
-2. [Data Sources](#data-sources)
-3. [Data Cleaning and Processing](#data-cleaning-and-processing)
-4. [Analysis and Visualization](#analysis-and-visualization)
-5. [Exported Graphs](#exported-graphs)
-6. [Data Preparation for Modeling](#data-preparation-for-modeling)
-7. [Model Generation](#model-generation)
-8. [Requirements](#requirements)
+2. [Report](#Report)
+3. [Data Sources](#data-sources)
+4. [Data Cleaning and Processing](#data-cleaning-and-processing)
+5. [Analysis and Visualization](#analysis-and-visualization)
+6. [Exported Graphs](#exported-graphs)
+7. [Data Preparation for Modeling](#data-preparation-for-modeling)
+8. [Model Generation](#model-generation)
+9. [Requirements](#requirements)
 
 ---
 
@@ -20,6 +21,8 @@ This project analyzes mortality data from the World Health Organization (WHO), f
 The code processes multiple WHO mortality datasets, cleans the data, and generates visualizations to understand trends in mortality across different causes, age groups, regions, and genders.
 
 ---
+
+## Report
 
 [![Report](./data/output/report.png)](https://lookerstudio.google.com/s/kQaDMdKJvRM)
 
