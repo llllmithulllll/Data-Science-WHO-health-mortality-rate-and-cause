@@ -23,9 +23,8 @@ The code processes multiple WHO mortality datasets, cleans the data, and generat
 ---
 
 ## Report
-<a href="https://lookerstudio.google.com/s/kQaDMdKJvRM" title="Go to Report">
+<a href="https://lookerstudio.google.com/s/kQaDMdKJvRM" title="Go to Interactive Report">
   <img src="./data/output/report.png" alt="Report" width="800">
-[![Report](./data/output/report.png)](https://lookerstudio.google.com/s/kQaDMdKJvRM)
 </a>
 
 
